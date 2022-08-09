@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<body style="background-color:LightGray;">
+
+<h2 style="color:MediumSeaGreen;">Calculadora condición de aprobación<br>Matemática 1 - 2° Semestre 2022</h2>
+
+
+<table>
+<tr>
+    <td style="color:RebeccaPurple;">Nota primer parcial (45%):</td>
+    <td><input type="number" id="nota1" value=""></td>
+</tr>
+<tr>
+    <td style="color:RebeccaPurple;">Nota segundo parcial (55%):</td>
+    <td><input type="number" id="nota2" value=""></td>
+</tr>
+</table>
+
+<button onclick="calcular()" style="color:RebeccaPurple; background-color:MediumSeaGreen;"><b>Calcular</b></button>
+
+<table>
+<tr>
+    <td style="color:RebeccaPurple;">Promedio:</td>
+    <td id="promedio" style="color:MediumSeaGreen;font-weight:bold"></td>
+</tr>
+<tr>
+    <td style="color:RebeccaPurple;">Condición:</td>
+    <td id="condicion" style="color:MediumSeaGreen;font-weight:bold"></td>
+</tr>
+</table>
+
+<script>
+function calcular() {
+  var nota1 = parseInt(document.getElementById("nota1").value);
+  var nota2 = parseInt(document.getElementById("nota2").value);
+  var promedio = 0.45*nota1+0.55*nota2;
+  var condicion = "";
+  if (promedio >= 60 || nota2 >= 60){
+       condicion = "Promociona";
+  } else { condicion = "Final";}
+  document.getElementById("condicion").innerHTML = condicion;
+  document.getElementById("promedio").innerHTML = promedio;
+  if (!(nota1 >= 0 && nota2 >= 0)){
+      alert("Debe ingresar una nota");
+  }
+}
+</script>
+
+
+</body>
+</html>
